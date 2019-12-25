@@ -37,18 +37,20 @@ private:
     QSpinBox* m_sizeSpinBox;
 
     Matrix* m_initMatrix;
-    QHBoxLayout* m_initLayout;
+    QVBoxLayout* m_initLayout;
 
     Matrix* m_finalMatrix;
-    QHBoxLayout* m_finalLayout;
+    QVBoxLayout* m_finalLayout;
 
     Matrix* m_resultMatrix;
-    QHBoxLayout* m_resultLayout;
+    QVBoxLayout* m_resultLayout;
+    QLabel* m_stepCount;
 
     QPushButton* m_startButton;
     QPushButton* m_nextButton;
 
     Node* m_result;
+    int m_count;
 
     QGroupBox* createSizeGroupBox();
     QGroupBox* createInitGroupBox();

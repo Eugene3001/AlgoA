@@ -7,7 +7,7 @@
 class AStar
 {
 public:
-    static Node* solve(std::vector<std::vector<int>> initial, int x, int y, std::vector<std::vector<int>> final);
+    static Node* solve(std::vector<std::vector<int>> initial, int x, int y, std::vector<std::vector<int>> final, int& count);
 
 private:
     static int calculateCost(std::vector<std::vector<int>> initial, std::vector<std::vector<int>> final);

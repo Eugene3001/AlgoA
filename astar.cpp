@@ -8,8 +8,9 @@ int  AStar::calculateCost(std::vector<std::vector<int>> initial, std::vector<std
         return count;
 }
 
-Node* AStar::solve(std::vector<std::vector<int>> initial, int x, int y, std::vector<std::vector<int>> final)
+Node* AStar::solve(std::vector<std::vector<int>> initial, int x, int y, std::vector<std::vector<int>> final, int &count)
 {
+    count = 0;
     int row[] = { 1, 0, -1, 0 };
     int col[] = { 0, -1, 0, 1 };
 
@@ -20,14 +21,16 @@ Node* AStar::solve(std::vector<std::vector<int>> initial, int x, int y, std::vec
 
     pq.push(root);
 
-    while (!pq.empty())
+    while (!pq.empty() && count < 100000)
     {
         Node* min = pq.top();
+        count++;
 
         pq.pop();
 
         if (min->getCost() == 0)
         {
+            count = min->getLevel();
             return min;
         }
 
